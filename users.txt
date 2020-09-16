@@ -1,0 +1,12 @@
+mike@mail.com;1234;mike;2020-09-11
+;;;2020-09-11
+emma@gmail.com;4567;emma;2020-09-11
+q@mail.com;1256;q;2020-09-11
+mum@mail.com;1234;mum;2020-09-11
+dad@mail.com;1234;dad;2020-09-11
+mike_1@mail.com;7;m;2020-09-11
+mike5@mail.com;7;m;2020-09-11
+kim@mail.com;4567;dad;2020-09-11
+bro@gmail.com;4569;bro;2020-09-11
+siz@gmail.com;4587;siz;2020-09-11
+me@gmail.com;1234;Me;2020-09-16

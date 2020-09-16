@@ -1,0 +1,156 @@
+<LoginWindow>:
+    name: "login"
+
+    email: email
+    password: password
+
+    FloatLayout:
+
+        Label:
+            text:"Email: "
+            font_size: (root.width**2 + root.height**2) / 13**4
+            pos_hint: {"x":0.1, "top":0.9}
+            size_hint: 0.35, 0.15
+
+        TextInput:
+            id: email
+            font_size: (root.width**2 + root.height**2) / 13**4
+            multiline: False
+            pos_hint: {"x": 0.45 , "top":0.9}
+            size_hint: 0.4, 0.15
+
+        Label:
+            text:"Password: "
+            font_size: (root.width**2 + root.height**2) / 13**4
+            pos_hint: {"x":0.1, "top":0.7}
+            size_hint: 0.35, 0.15
+
+        TextInput:
+            id: password
+            font_size: (root.width**2 + root.height**2) / 13**4
+            multiline: False
+            password: True
+            pos_hint: {"x": 0.45, "top":0.7}
+            size_hint: 0.4, 0.15
+
+        Button:
+            pos_hint:{"x":0.2,"y":0.05}
+            size_hint: 0.6, 0.2
+            font_size: (root.width**2 + root.height**2) / 13**4
+            text: "Login"
+            on_release:
+                root.manager.transition.direction = "up"
+                root.loginBtn()
+    
+<MainWindow>:
+    name: "main"
+    
+    FloatLayout:
+        Label:
+            id: n
+            pos_hint:{"x": 0.1, "top":0.9}
+            size_hint:0.8, 0.2
+            text: "Welcome"
+
+        Button:
+            pos_hint:{"x":0.2,"y":0.6}
+            size_hint: 0.6, 0.2
+            font_size: (root.width**2 + root.height**2) / 13**4
+            text: "Compute sales"
+            on_release:
+                root.manager.transition.direction = "up"
+                root.computeBtn()
+        Button:
+            pos_hint:{"x":0.2, "y": 0.1}
+            size_hint:0.6,0.2
+            text: "Log Out"
+            on_release:
+                app.root.current = "login"
+                root.manager.transition.direction = "down"        
+<TodaySales>:
+    name: "today"
+    opening_chicken: opening_chicken
+    closing_chicken: closing_chicken
+    chicken_price: chicken_price
+    chomas_cut: chomas_cut
+    opening_gizzards:  opening_gizzards
+    closing_gizzards: closing_gizzards
+    opening_liver: opening_liver
+    added_liver: added_liver
+    closing_liver: closing_liver
+    opening_necks: opening_necks
+    added_necks: added_necks
+    closing_necks: closing_necks
+    opening_legs: opening_legs
+    added_legs: added_legs
+    closing_legs: closing_legs
+
+    FloatLayout:
+        Label:
+            pos_hint:{"x": 0.1, "top":1}
+            size_hint:0.8, 0.075
+            text: "Welcome"
+
+        Label:
+            text:"Opening chicken: "
+            font_size: (root.width**2 + root.height**2) / 13**4
+            pos_hint: {"x":0.1, "top":0.9}
+            size_hint: 0.35, 0.075
+        TextInput:
+            id: opening_chicken
+            multiline: False
+            font_size: (root.width**2 + root.height**2) / 13**4
+            pos_hint: {"x":0.5, "top":0.9}
+            size_hint: 0.35, 0.075
+            input_filter: "float"
+
+        Label:
+            text:"Closing chicken: "
+            font_size: (root.width**2 + root.height**2) / 13**4
+            pos_hint: {"x":0.1, "top":0.8}
+            size_hint: 0.35, 0.075
+        TextInput:
+            id: closing_chicken
+            multiline: False
+            font_size: (root.width**2 + root.height**2) / 13**4
+            pos_hint: {"x":0.5, "top":0.8}
+            size_hint: 0.35, 0.075
+            input_filter: "float"
+
+        Label:
+            text:"Chicken price: "
+            font_size: (root.width**2 + root.height**2) / 13**4
+            pos_hint: {"x":0.1, "top":0.7}
+            size_hint: 0.35, 0.075
+        TextInput:
+            id: chicken_price
+            multiline: False
+            font_size: (root.width**2 + root.height**2) / 13**4
+            pos_hint: {"x":0.5, "top":0.7}
+            size_hint: 0.35, 0.075
+            input_filter: "float"
+
+        Label:
+            text:"Chomas cut: "
+            font_size: (root.width**2 + root.height**2) / 13**4
+            pos_hint: {"x":0.1, "top":0.6}
+            size_hint: 0.35, 0.075
+        TextInput:
+            id: chomas_cut
+            multiline: False
+            font_size: (root.width**2 + root.height**2) / 13**4
+            pos_hint: {"x":0.5, "top":0.6}
+            size_hint: 0.35, 0.075
+            input_filter: "float"    
+
+        Button:
+            pos_hint:{"x":0.2, "top": 0.1}
+            size_hint:0.6,0.1
+            text: "Compute"
+            on_release:
+                root.manager.transition.direction = "down" 
+                root.csales()              
+
+
+
+        
