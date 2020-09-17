@@ -25,10 +25,42 @@ class TodaySales(Screen):
     opening_chicken = ObjectProperty(None)
     closing_chicken = ObjectProperty(None)
     chicken_price = ObjectProperty(None)
+    chomas_cut = ObjectProperty(None)
+    opening_choma = ObjectProperty(None)
+    closing_choma = ObjectProperty(None)
+    opening_gizzards = ObjectProperty(None)
+    added_gizzards = ObjectProperty(None)
+    closing_gizzards = ObjectProperty(None)
+    
     
     def csales(self):
         sales = (int(self.opening_chicken.text) - int(self.closing_chicken.text))* int(self.chicken_price.text)
         print(sales)
+
+class SecondScreen(Screen):
+    opening_necks = ObjectProperty(None)
+    added_necks = ObjectProperty(None)
+    closing_necks = ObjectProperty(None)
+    opening_liver = ObjectProperty(None)
+    added_liver = ObjectProperty(None)
+    closing_liver = ObjectProperty(None)
+    opening_legs = ObjectProperty(None)
+    added_legs = ObjectProperty(None)
+    closing_legs = ObjectProperty(None)
+    
+
+
+class ThirdScreen(Screen):
+    opening_sausages = ObjectProperty(None)
+    added_sausages = ObjectProperty(None)
+    closing_sausages = ObjectProperty(None)
+    opening_smokies = ObjectProperty(None)
+    added_smokies = ObjectProperty(None)
+    closing_smokies = ObjectProperty(None)
+
+
+
+
 
        
 
@@ -57,7 +89,7 @@ kv = Builder.load_file("cred.kv")
 sm = WindowManager()
     
 
-screens = [LoginWindow(name = "login"), MainWindow(name = "main"), TodaySales(name = "today")]
+screens = [LoginWindow(name = "login"), MainWindow(name = "main"), TodaySales(name = "today"), SecondScreen(name= "second"), ThirdScreen(name="third")]
 for screen in screens:
     sm.add_widget(screen)
 
