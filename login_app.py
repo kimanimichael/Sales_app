@@ -24,7 +24,7 @@ class LoginWindow(Screen):
     password = ObjectProperty(None)
 
     def loginBtn(self):
-        if self.email.text == 'm' and self.password.text == '1':
+        if self.email.text == '' and self.password.text == '':
             sm.current = "main"
         else:
             invalid_login()
@@ -45,9 +45,11 @@ class TodaySales(Screen):
     def csales(self):
         chicken_sales = (float(self.opening_chicken.text) +float(self.added_chicken.text) - float(self.closing_chicken.text)- float(self.chomas_cut.text)- float(self.kuku_out.text))* float(self.chicken_price.text)
         print("Chicken: " + str(chicken_sales))
+        return float(chicken_sales)
     def choma(self):
         choma_sales = (float(self.opening_choma.text) + float(self.chomas_cut.text)*4 - float(self.closing_choma.text))*choma_price
-        print("Choma: " + str(choma_sales))    
+        print("Choma: " + str(choma_sales))
+        return float(choma_sales)    
         
 
     
@@ -71,6 +73,7 @@ class SecondScreen(Screen):
     def nsales(self):
         necks_sales = (float(self.opening_necks.text) +float(self.added_necks.text) - float(self.closing_necks.text))* necks_price
         print("Necks: " + str(necks_sales))
+        return necks_sales
 
     def livsales(self):
         liver_sales = (float(self.opening_liver.text) +float(self.added_liver.text) - float(self.closing_liver.text))* liver_price
@@ -100,11 +103,11 @@ class ThirdScreen(Screen):
 
     def sausagesales(self):
         sausage_sales = (float(self.opening_sausages.text) +float(self.added_sausages.text) - float(self.closing_sausages.text))* sausages_price
-        print("Liver: " + str(sausage_sales)) 
+        print("Sausages: " + str(sausage_sales)) 
 
     def smokiesales(self):
         smokie_sales = (float(self.opening_smokies.text) +float(self.added_smokies.text) - float(self.closing_smokies.text))* smokies_price
-        print("Liver: " + str(smokie_sales))
+        print("Smokies: " + str(smokie_sales))
 
 
 
@@ -129,8 +132,9 @@ def invalid_login():
                 size_hint = (None, None), size =(400,400))
     pop.open()
 
-k = TodaySales()
-#k.csales()
+k= TodaySales()
+p = k.csales()
+print(p)
     
 
   
