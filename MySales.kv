@@ -1,0 +1,46 @@
+#:import SlideTransition kivy.uix.screenmanager.SlideTransition
+
+ScreenManager:
+    id: screen_manager
+    #transition: FadeTransition()
+    MainWindow:
+        name: 'mainWindow'
+        manager: 'screen_manager'
+    Login:
+        name: 'login'
+        manager: 'screen_manager'
+    Sales:
+        name: "sales"
+        manager: 'screen_manager'
+    Sales2:
+        name: 'sales2'
+        manager: 'screen_manager'
+    Sales3:
+        name: 'sales3'
+        manager: 'screen_manager'
+
+<MainWindow>:
+    name: "mainWindow"
+
+    FloatLayout:
+        Label:
+            id: n
+            pos_hint:{"x": 0.1, "top":0.9}
+            size_hint:0.8, 0.2
+            text: "Welcome"
+
+        Button:
+            pos_hint:{"x":0.2,"top":0.6}
+            size_hint: 0.6, 0.2
+            font_size: (root.width**2 + root.height**2) / 15**4
+            text: "Compute sales"
+            on_release:
+                app.root.transition = SlideTransition(direction='up')
+                root.computeBtn()
+        Button:
+            pos_hint:{"x":0.2, "y": 0.1}
+            size_hint:0.6,0.2
+            text: "Log Out"
+            on_release:
+                app.root.current = "login"
+                app.root.transition = SlideTransition(direction='down')

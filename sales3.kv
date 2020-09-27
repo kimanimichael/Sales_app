@@ -1,0 +1,151 @@
+#:import sales3 sales3
+#:import SlideTransition kivy.uix.screenmanager.SlideTransition
+
+<Sales3>:
+    name: 'sales3'
+    opening_gizzards:  _opening_gizzards
+    added_gizzards: _added_gizzards
+    closing_gizzards: _closing_gizzards
+    opening_sausages: _opening_sausages
+    added_sausages: _added_sausages
+    closing_sausages: _closing_sausages
+    opening_smokies: _opening_smokies
+    added_smokies: _added_smokies
+    closing_smokies: _closing_smokies
+
+    FloatLayout:
+        Label:
+            text:"Opening Gizzards: "
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.1, "top":0.995}
+            size_hint: 0.35, 0.07
+        TextInput:
+            id: _opening_gizzards
+            multiline: False
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.5, "top":0.995}
+            size_hint: 0.35, 0.07
+            input_filter: "float"
+
+        Label:
+            text:"Added Gizzards: "
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.1, "top":0.9}
+            size_hint: 0.35, 0.07
+        TextInput:
+            id: _added_gizzards
+            multiline: False
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.5, "top":0.9}
+            size_hint: 0.35, 0.07
+            input_filter: "float"
+
+        Label:
+            text:"Closing Gizzards: "
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.1, "top":0.8}
+            size_hint: 0.35, 0.07
+        TextInput:
+            id: _closing_gizzards
+            multiline: False
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.5, "top":0.8}
+            size_hint: 0.35, 0.07
+            input_filter: "float"
+
+
+        Label:
+            text:"Opening sausages: "
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.1, "top":0.7}
+            size_hint: 0.35, 0.075
+        TextInput:
+            id: _opening_sausages
+            multiline: False
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.5, "top":0.7}
+            size_hint: 0.35, 0.075
+            input_filter: "float"
+
+        Label:
+            text:"Added sausages: "
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.1, "top":0.6}
+            size_hint: 0.35, 0.075
+        TextInput:
+            id: _added_sausages
+            multiline: False
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.5, "top":0.6}
+            size_hint: 0.35, 0.075
+            input_filter: "float"
+
+        Label:
+            text:"Closing sausages: "
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.1, "top":0.5}
+            size_hint: 0.35, 0.075
+        TextInput:
+            id: _closing_sausages
+            multiline: False
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.5, "top":0.5}
+            size_hint: 0.35, 0.075
+            input_filter: "float"
+
+        Label:
+            text:"Opening smokies: "
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.1, "top":0.4}
+            size_hint: 0.35, 0.075
+        TextInput:
+            id: _opening_smokies
+            multiline: False
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.5, "top":0.4}
+            size_hint: 0.35, 0.075
+            input_filter: "float"
+
+        Label:
+            text:"Added smokies: "
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.1, "top":0.3}
+            size_hint: 0.35, 0.075
+        TextInput:
+            id: _added_smokies
+            multiline: False
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.5, "top":0.3}
+            size_hint: 0.35, 0.075
+            input_filter: "float"
+
+        Label:
+            text:"Closing smokies: "
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.1, "top":0.2}
+            size_hint: 0.35, 0.075
+        TextInput:
+            id: _closing_smokies
+            multiline: False
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.5, "top":0.2}
+            size_hint: 0.35, 0.075
+            input_filter: "float"
+
+        Button:
+            pos_hint:{"x":0.2, "top": 0.1}
+            size_hint:0.3,0.08
+            text: "Back"
+            on_release:
+                app.root.current = "sales2"
+                app.root.transition = SlideTransition(direction='right')
+
+        Button:
+            pos_hint:{"x":0.6, "top": 0.1}
+            size_hint:0.3,0.08
+            text: "Compute"
+            on_release:
+                root.gizzardsales()
+                root.sausagesales()
+                root.smokiesales()
+                app.root.transition = SlideTransition(direction='down')

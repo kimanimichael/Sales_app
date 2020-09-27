@@ -1,0 +1,45 @@
+#:import Login login
+#:import SlideTransition kivy.uix.screenmanager.SlideTransition
+
+<Login>:
+    name: "login"
+    email: _email
+    password: _password
+
+    FloatLayout:
+
+        Label:
+            text:"Email: "
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.1, "top":0.9}
+            size_hint: 0.35, 0.075
+
+        TextInput:
+            id: _email #only accessible within the file
+            font_size: (root.width**2 + root.height**2) / 15**4
+            multiline: False
+            pos_hint: {"x": 0.45 , "top":0.9}
+            size_hint: 0.4, 0.15
+
+        Label:
+            text:"Password: "
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.1, "top":0.7}
+            size_hint: 0.35, 0.075
+
+        TextInput:
+            id: _password
+            font_size: (root.width**2 + root.height**2) / 15**4
+            multiline: False
+            password: True
+            pos_hint: {"x": 0.45, "top":0.7}
+            size_hint: 0.4, 0.15
+
+        Button:
+            pos_hint:{"x":0.2,"y":0.05}
+            size_hint: 0.6, 0.2
+            font_size: (root.width**2 + root.height**2) / 15**4
+            text: "Login"
+            on_release:
+                app.root.transition = SlideTransition(direction='up')
+                root.login()

@@ -1,0 +1,141 @@
+#:import Sales sales
+#:import SlideTransition kivy.uix.screenmanager.SlideTransition
+
+<Sales>:
+    name: "sales"
+    opening_chicken: _opening_chicken
+    added_chicken: _added_chicken
+    closing_chicken: _closing_chicken
+    chicken_price: _chicken_price
+    chomas_cut: _chomas_cut
+    opening_choma: _opening_choma
+    closing_choma: _closing_choma
+    kuku_out: _kuku_out
+
+    FloatLayout:
+        Label:
+            pos_hint:{"x": 0.1, "top":1}
+            size_hint:0.8, 0.04
+            text: "Welcome"
+
+        Label:
+            text:"Opening chicken: "
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.1, "top":0.95}
+            size_hint: 0.35, 0.07
+        TextInput:
+            id: _opening_chicken
+            multiline: False
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.5, "top":0.95}
+            size_hint: 0.35, 0.07
+            input_filter: "float"
+
+        Label:
+            text:"Added chicken: "
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.1, "top":0.85}
+            size_hint: 0.35, 0.07
+        TextInput:
+            id: _added_chicken
+            multiline: False
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.5, "top":0.85}
+            size_hint: 0.35, 0.07
+            input_filter: "float"
+
+        Label:
+            text:"Closing chicken: "
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.1, "top":0.75}
+            size_hint: 0.35, 0.07
+        TextInput:
+            id: _closing_chicken
+            multiline: False
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.5, "top":0.75}
+            size_hint: 0.35, 0.07
+            input_filter: "float"
+
+        Label:
+            text:"Chicken price: "
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.1, "top":0.65}
+            size_hint: 0.35, 0.07
+        TextInput:
+            id: _chicken_price
+            multiline: False
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.5, "top":0.65}
+            size_hint: 0.35, 0.07
+            input_filter: "float"
+
+        Label:
+            text:"Chomas cut: "
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.1, "top":0.55}
+            size_hint: 0.35, 0.07
+        TextInput:
+            id: _chomas_cut
+            multiline: False
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.5, "top":0.55}
+            size_hint: 0.35, 0.07
+            input_filter: "float"
+
+        Label:
+            text:"Opening choma: "
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.1, "top":0.45}
+            size_hint: 0.35, 0.07
+        TextInput:
+            id: _opening_choma
+            multiline: False
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.5, "top":0.45}
+            size_hint: 0.35, 0.07
+            input_filter: "float"
+
+        Label:
+            text:"Closing choma: "
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.1, "top":0.35}
+            size_hint: 0.35, 0.07
+        TextInput:
+            id: _closing_choma
+            multiline: False
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.5, "top":0.35}
+            size_hint: 0.35, 0.07
+            input_filter: "float"
+
+        Label:
+            text:"Kuku out: "
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.1, "top":0.25}
+            size_hint: 0.35, 0.07
+        TextInput:
+            id: _kuku_out
+            multiline: False
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.5, "top":0.25}
+            size_hint: 0.35, 0.07
+            input_filter: "float"
+
+        Button:
+            pos_hint:{"x":0.2, "top": 0.1}
+            size_hint:0.3,0.08
+            text: "Back"
+            on_release:
+                app.root.current = "mainWindow"
+                app.root.transition = SlideTransition(direction='down')
+
+        Button:
+            pos_hint:{"x":0.6, "top": 0.1}
+            size_hint:0.3,0.08
+            text: "Continue to more items"
+            on_release:
+                app.root.current = "second"
+                app.root.transition = SlideTransition(direction='left')
+                root.csales()
+                root.choma()

@@ -1,0 +1,149 @@
+#:import sales2 sales2
+<Sales2>:
+    name: "sales2"
+    opening_necks: _opening_necks
+    added_necks: _added_necks
+    closing_necks: _closing_necks
+    opening_liver: _opening_liver
+    added_liver: _added_liver
+    closing_liver: _closing_liver
+    opening_legs: _opening_legs
+    added_legs: _added_legs
+    closing_legs: _closing_legs
+
+    FloatLayout:
+        Label:
+            text:"Opening necks: "
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.1, "top":0.995}
+            size_hint: 0.35, 0.075
+        TextInput:
+            id: _opening_necks
+            multiline: False
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.5, "top":0.995}
+            size_hint: 0.35, 0.075
+            input_filter: "float"
+
+        Label:
+            text:"Added necks: "
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.1, "top":0.9}
+            size_hint: 0.35, 0.075
+        TextInput:
+            id: _added_necks
+            multiline: False
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.5, "top":0.9}
+            size_hint: 0.35, 0.075
+            input_filter: "float"
+
+        Label:
+            text:"Closing necks: "
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.1, "top":0.8}
+            size_hint: 0.35, 0.075
+        TextInput:
+            id: _closing_necks
+            multiline: False
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.5, "top":0.8}
+            size_hint: 0.35, 0.075
+            input_filter: "float"
+        Label:
+            text:"Opening liver: "
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.1, "top":0.7}
+            size_hint: 0.35, 0.075
+        TextInput:
+            id: _opening_liver
+            multiline: False
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.5, "top":0.7}
+            size_hint: 0.35, 0.075
+            input_filter: "float"
+
+        Label:
+            text:"Added Liver: "
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.1, "top":0.6}
+            size_hint: 0.35, 0.075
+        TextInput:
+            id: _added_liver
+            multiline: False
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.5, "top":0.6}
+            size_hint: 0.35, 0.075
+            input_filter: "float"
+
+        Label:
+            text:"Closing Liver: "
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.1, "top":0.5}
+            size_hint: 0.35, 0.075
+        TextInput:
+            id: _closing_liver
+            multiline: False
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.5, "top":0.5}
+            size_hint: 0.35, 0.075
+            input_filter: "float"
+
+        Label:
+            text:"Opening Legs: "
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.1, "top":0.4}
+            size_hint: 0.35, 0.075
+        TextInput:
+            id: _opening_legs
+            multiline: False
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.5, "top":0.4}
+            size_hint: 0.35, 0.075
+            input_filter: "float"
+
+        Label:
+            text:"Added Legs: "
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.1, "top":0.3}
+            size_hint: 0.35, 0.075
+        TextInput:
+            id: _added_legs
+            multiline: False
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.5, "top":0.3}
+            size_hint: 0.35, 0.075
+            input_filter: "float"
+
+        Label:
+            text:"Closing legs: "
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.1, "top":0.2}
+            size_hint: 0.35, 0.075
+        TextInput:
+            id: _closing_legs
+            multiline: False
+            font_size: (root.width**2 + root.height**2) / 15**4
+            pos_hint: {"x":0.5, "top":0.2}
+            size_hint: 0.35, 0.075
+            input_filter: "float"
+
+        Button:
+            pos_hint:{"x":0.2, "top": 0.1}
+            size_hint:0.3,0.08
+            text: "Back"
+            on_release:
+                app.root.current = "sales"
+                root.manager.transition.direction = "right"
+
+
+        Button:
+            pos_hint:{"x":0.6, "top": 0.1}
+            size_hint:0.3,0.08
+            text: "Continue to more items"
+            on_release:
+                app.root.current = "sales3"
+                root.manager.transition.direction = "left"
+                root.nsales()
+                root.livsales()
+                root.legsales()
