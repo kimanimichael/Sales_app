@@ -41,15 +41,16 @@ class TodaySales(Screen):
     kuku_out = ObjectProperty(None)
     
     
-
+    
     def csales(self):
         chicken_sales = (float(self.opening_chicken.text) +float(self.added_chicken.text) - float(self.closing_chicken.text)- float(self.chomas_cut.text)- float(self.kuku_out.text))* float(self.chicken_price.text)
         print("Chicken: " + str(chicken_sales))
-        return float(chicken_sales)
+        return chicken_sales
+    
     def choma(self):
         choma_sales = (float(self.opening_choma.text) + float(self.chomas_cut.text)*4 - float(self.closing_choma.text))*choma_price
         print("Choma: " + str(choma_sales))
-        return float(choma_sales)    
+        return choma_sales    
         
 
     
@@ -97,14 +98,16 @@ class ThirdScreen(Screen):
     added_smokies = ObjectProperty(None)
     closing_smokies = ObjectProperty(None)
 
+    
     def gizzardsales(self):
         gizzard_sales = (float(self.opening_gizzards.text) +float(self.added_gizzards.text) - float(self.closing_gizzards.text))* gizzards_price
         print("Gizzards: " + str(gizzard_sales))
 
+    
     def sausagesales(self):
         sausage_sales = (float(self.opening_sausages.text) +float(self.added_sausages.text) - float(self.closing_sausages.text))* sausages_price
         print("Sausages: " + str(sausage_sales)) 
-
+    
     def smokiesales(self):
         smokie_sales = (float(self.opening_smokies.text) +float(self.added_smokies.text) - float(self.closing_smokies.text))* smokies_price
         print("Smokies: " + str(smokie_sales))
@@ -132,9 +135,9 @@ def invalid_login():
                 size_hint = (None, None), size =(400,400))
     pop.open()
 
-k= TodaySales()
-p = k.csales()
-print(p)
+#k= TodaySales()
+#p = k.csales()
+#print(p)
     
 
   
